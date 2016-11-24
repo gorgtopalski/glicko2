@@ -30,17 +30,13 @@ public class Rating {
 	
 	/**
 	 * 
-	 * @param uid           An value through which you want to identify the rating (not actually used by the algorithm)
-	 * @param ratingSystem  An instance of the RatingCalculator object
-	 */
-	public Rating(String uid, RatingCalculator ratingSystem) {
-		this.uid = uid;
-		this.rating = ratingSystem.getDefaultRating();
-		this.ratingDeviation = ratingSystem.getDefaultRatingDeviation();
-		this.volatility = ratingSystem.getDefaultVolatility();
-	}
+	 * @param uid           		An value through which you want to identify the rating (not actually used by the algorithm)
+	 * @param initRating  			Initial rating
+	 * @param initRatingDeviation  	Initial rating deviation
+	 * @param initVolatility  		Initial volatility
 
-	public Rating(String uid, RatingCalculator ratingSystem, double initRating, double initRatingDeviation, double initVolatility) {
+	 */
+	public Rating(String uid, double initRating, double initRatingDeviation, double initVolatility) {
 		this.uid = uid;
 		this.rating = initRating;
 		this.ratingDeviation = initRatingDeviation;
@@ -73,7 +69,7 @@ public class Rating {
 	/**
 	 * Set the average skill value, taking in a value in Glicko2 scale.
 	 * 
-	 * @param double
+	 * @param rating
 	 */
 	public void setGlicko2Rating(double rating) {
 		this.rating = RatingCalculator.convertRatingToOriginalGlickoScale(rating);
@@ -108,7 +104,7 @@ public class Rating {
 	/**
 	 * Set the rating deviation, taking in a value in Glicko2 scale.
 	 * 
-	 * @param double
+	 * @param ratingDeviation
 	 */
 	public void setGlicko2RatingDeviation(double ratingDeviation) {
 		this.ratingDeviation = RatingCalculator.convertRatingDeviationToOriginalGlickoScale( ratingDeviation );

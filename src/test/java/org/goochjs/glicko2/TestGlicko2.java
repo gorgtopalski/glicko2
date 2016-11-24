@@ -6,10 +6,10 @@
  */
 package org.goochjs.glicko2;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
 
 /**
  * @author Jeremy Gooch
@@ -19,11 +19,11 @@ public class TestGlicko2 {
 
 	private RatingCalculator ratingSystem = new RatingCalculator(0.06, 0.5);
 	private RatingPeriodResults results = new RatingPeriodResults();
-	private Rating player1 = new Rating("player1", ratingSystem); // the main player of Glickman's example
-	private Rating player2 = new Rating("player2", ratingSystem); 
-	private Rating player3 = new Rating("player3", ratingSystem);
-	private Rating player4 = new Rating("player4", ratingSystem);
-	private Rating player5 = new Rating("player5", ratingSystem); // this player won't compete during the test
+	private Rating player1 = new Rating("player1", ratingSystem.getDefaultRating(), ratingSystem.getDefaultRatingDeviation(), ratingSystem.getDefaultVolatility()); // the main player of Glickman's example
+	private Rating player2 = new Rating("player2", ratingSystem.getDefaultRating(), ratingSystem.getDefaultRatingDeviation(), ratingSystem.getDefaultVolatility());
+	private Rating player3 = new Rating("player3", ratingSystem.getDefaultRating(), ratingSystem.getDefaultRatingDeviation(), ratingSystem.getDefaultVolatility());
+	private Rating player4 = new Rating("player4", ratingSystem.getDefaultRating(), ratingSystem.getDefaultRatingDeviation(), ratingSystem.getDefaultVolatility());
+	private Rating player5 = new Rating("player5", ratingSystem.getDefaultRating(), ratingSystem.getDefaultRatingDeviation(), ratingSystem.getDefaultVolatility()); // this player won't compete during the test
 	
 	/**
 	 * This test uses the values from the example towards the end of Glickman's paper as a simple test of the calculation engine
