@@ -2,6 +2,7 @@ package org.topalski.teams;
 
 import org.goochjs.glicko2.Rating;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,7 +21,14 @@ public class Team
 
     public Team(Set<Rating> team)
     {
-        this.team = team;
+        this();
+        team.forEach(team::add);
+    }
+
+    public Team(Rating[] team)
+    {
+        this();
+        Collections.addAll(this.team, team);
     }
 
     public Team(Rating player)
@@ -29,7 +37,7 @@ public class Team
         this.team.add(player);
     }
 
-    public void addToTeam(Rating player)
+    public void addTeamPlayer(Rating player)
     {
         team.add(player);
     }
