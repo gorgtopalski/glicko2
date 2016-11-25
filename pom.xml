@@ -5,12 +5,12 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.goochjs</groupId>
-	<artifactId>goochjs-glicko2</artifactId>
+	<groupId>org.topalski</groupId>
+	<artifactId>glicko2-team</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
-	<description>Glicko-2 rating system</description>
-	<name>glicko2</name>
+	<description>Glicko-2 rating system with team modification</description>
+	<name>glicko2-team</name>
 
 	<properties>
 		<junit.version>4.10</junit.version>
@@ -40,7 +40,7 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							org.goochjs.glicko2*;version=${project.version}
+							org.topalski.glicko2-team*;version=${project.version}
 						</Export-Package>
 						<Import-Package>
 							*
